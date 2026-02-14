@@ -57,3 +57,12 @@ int	ft_is_number(char *str)
 	}
 	return (1);
 }
+
+int is_valid_number(char *line, char *argument_string)
+{
+	int len = ft_strlen(argument_string);
+
+	if (ft_strncmp(line, argument_string, len) == 0 && (line[len] == ':' || line[len] == ' ')) 
+		return 1;
+return 0;
+}
