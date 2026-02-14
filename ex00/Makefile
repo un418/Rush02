@@ -7,8 +7,7 @@
 
 SHELL = /bin/sh
 
-
-SRC = main.c ourheader.c 
+SRC = main.c ourheader.c
 NAME = rush-02
 
 all: $(NAME)
@@ -16,9 +15,8 @@ all: $(NAME)
 $(NAME):
 	gcc -Wextra -Werror -Wall $(SRC) -o $(NAME)
 
-# clean:
-# 	rm -f *.o
+clean:
+
 
 fclean: clean
 	rm -f $(NAME)
-
