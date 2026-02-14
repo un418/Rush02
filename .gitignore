@@ -1,0 +1,6 @@
+# Ignore asked executable file
+rush-02
+# Ignore all executable file
+*.o
+# Ignore default executable file
+a.out
