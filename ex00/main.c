@@ -34,7 +34,6 @@ int	main(int argc, char **argv)
 		}
 	dict = malloc(ft_filesize(filename)+ 1);
 	ft_file_to_char(filename, dict);
-	// printf("dict=%s",dict); // Debug to remove later
 	i = 0;
 	while (dict[i])
 	{
@@ -42,7 +41,7 @@ int	main(int argc, char **argv)
 		{
 			if (ft_is_valid_number(&dict[i],argv[1]))
 			{
-				ft_write_number(&dict[i]);
+				ft_write_result(&dict[i]);
 				exit(EXIT_SUCCESS);
 			}
 		}
