@@ -138,6 +138,17 @@ void	ft_file_to_char(char *filename, char *output_string)
 	close(fd);
 }
 
+void ft_write_number(char *str)
+{
+	int a = 0;
+
+	while(!((str[a] >= 'a' && str[a] <= 'z' ) || (str[a] >= 'A' && str[a] <= 'Z' )))
+		a++;
+	while(str[a] != '\n' && str[a] != '\0')
+		write(1, &str[a++], 1);
+	write(1, "\n", 1);
+}
+
 /* 
 // Main to test ft_file_to_char & ft_filesize
 #include <stdio.h>

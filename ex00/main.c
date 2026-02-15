@@ -5,6 +5,7 @@ int	main(int argc, char **argv)
 {
 	char *dict;
 	char *filename;
+	int i;
 	
 	char default_filename[]="numbers.dict";
 
@@ -33,10 +34,21 @@ int	main(int argc, char **argv)
 		}
 	dict = malloc(ft_filesize(filename)+ 1);
 	ft_file_to_char(filename, dict);
-	printf("dict=%s",dict); // Debug to remove later
-
+	// printf("dict=%s",dict); // Debug to remove later
+	i = 0;
+	while (dict[i])
+	{
+		if (dict[i] == argv[1][0])
+		{
+			if (ft_is_valid_number(&dict[i],argv[1]))
+			{
+				ft_write_number(&dict[i]);
+				exit(EXIT_SUCCESS);
+			}
+		}
+		i++;
+	}
 	free(dict);
-	return (0);
+	write(2, "Dict Error\n", 11);
+	return (1);
 }
-
-
