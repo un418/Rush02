@@ -6,13 +6,13 @@
 /*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 15:11:10 by adaferna          #+#    #+#             */
-/*   Updated: 2026/02/15 18:55:53 by adaferna         ###   ########.fr       */
+/*   Updated: 2026/02/15 19:05:39 by adaferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ourheader.h"
 
-void	ft_write_result(char *str)
+void	ft_write_result(char *str, char *free_str1, char *free_str2)
 {
 	int	a;
 
@@ -23,4 +23,5 @@ void	ft_write_result(char *str)
 	while (str[a] != '\n' && str[a] != '\0')
 		write(1, &str[a++], 1);
 	write(1, "\n", 1);
+	ft_free(free_str1, free_str2);
 }
