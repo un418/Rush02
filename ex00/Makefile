@@ -16,7 +16,8 @@ SRC =	main.c \
 		lib/ft_strcpy.c \
 		lib/ft_strlen.c \
 		lib/ft_strncmp.c \
-		lib/ft_write_result.c
+		lib/ft_write_result.c \
+		lib/ft_free.c
 
 NAME = rush-02
 

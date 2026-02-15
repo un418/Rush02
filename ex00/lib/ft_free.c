@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/15 15:05:52 by adaferna          #+#    #+#             */
-/*   Updated: 2026/02/15 18:47:19 by adaferna         ###   ########.fr       */
+/*   Created: 2026/02/15 18:21:26 by adaferna          #+#    #+#             */
+/*   Updated: 2026/02/15 18:40:47 by adaferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ourheader.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+// Function to free 2 strings at the same time
+void	ft_free(char *str1, char *str2)
 {
-	unsigned int	c;
-
-	c = 0;
-	while (c < n && ((*s1) || (*s2)))
-	{
-		if (*s1 == *s2)
-		{
-			s1++;
-			s2++;
-			c++;
-		}
-		else
-		{
-			return (*s1 - *s2);
-		}
-	}
-	return (0);
+	free(str1);
+	free(str2);
 }

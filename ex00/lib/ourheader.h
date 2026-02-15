@@ -1,9 +1,21 @@
-#ifndef OURHEADER_H
-#define OURHEADER_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ourheader.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/15 18:52:59 by adaferna          #+#    #+#             */
+/*   Updated: 2026/02/15 18:53:41 by adaferna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
+#ifndef OURHEADER_H
+# define OURHEADER_H
+
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
 
 int		ft_strlen(char *str);
 int		ft_is_number(char *str);
@@ -14,5 +26,6 @@ void	ft_file_to_char(char *filename, char *output_string);
 void	ft_write_result(char *str);
 char	*ft_strcpy(char *dest, char *src);
 int		ft_arg(int argc, char **argv, char *filename);
+void	ft_free(char *str1, char *str2);
 
 #endif

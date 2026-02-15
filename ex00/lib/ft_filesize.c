@@ -6,7 +6,7 @@
 /*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 15:07:34 by adaferna          #+#    #+#             */
-/*   Updated: 2026/02/15 15:08:20 by adaferna         ###   ########.fr       */
+/*   Updated: 2026/02/15 18:45:16 by adaferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ int	ft_filesize(char *filename)
 	int		ret;
 	char	buffer[1];
 
-
 	size = 0;
+	ret = 1;
 	fd = open(filename, O_RDONLY);
-	while ((ret = read(fd, buffer, 1)) > 0)
+	while (ret > 0)
 	{
+		ret = read(fd, buffer, 1);
 		size++;
 	}
 	close(fd);
