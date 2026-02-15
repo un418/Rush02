@@ -6,7 +6,7 @@
 /*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 15:04:09 by adaferna          #+#    #+#             */
-/*   Updated: 2026/02/15 15:30:13 by adaferna         ###   ########.fr       */
+/*   Updated: 2026/02/15 18:45:44 by adaferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_is_number(char *str)
 {
-	int i;
+	int	i;
 
 	if (!str || str[0] == '\0')
 		return (0);

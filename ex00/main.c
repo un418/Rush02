@@ -6,7 +6,7 @@
 /*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 16:21:11 by adaferna          #+#    #+#             */
-/*   Updated: 2026/02/15 17:00:10 by adaferna         ###   ########.fr       */
+/*   Updated: 2026/02/15 18:40:02 by adaferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	char	*filename;
 	int		i;
 
-	filename = malloc( sizeof(char *));
+	filename = malloc(sizeof(char *));
 	if (ft_arg(argc, argv, filename) != 0)
 		return (1);
 	dict = malloc(ft_filesize(filename)+ 1);
@@ -36,8 +36,7 @@ int	main(int argc, char **argv)
 		}
 		i++;
 	}
-	free(dict);
-	free(filename);
+	ft_free(dict, filename);
 	write(2, "Dict Error\n", 11);
 	return (1);
 }
