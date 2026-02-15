@@ -31,9 +31,7 @@ int	main(int argc, char **argv)
 			write(2, "Error\n", 6);
 			exit(EXIT_FAILURE);
 		}
-
-	// My first malloc
-	dict = malloc(ft_filesize(filename));
+	dict = malloc(ft_filesize(filename)+ 1);
 	ft_file_to_char(filename, dict);
 	printf("dict=%s",dict); // Debug to remove later
 

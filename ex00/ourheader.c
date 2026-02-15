@@ -103,8 +103,8 @@ int	ft_filesize(char *filename)
 	{
 		size++;
 	}
-	return (size);
 	close(fd);
+	return (size);
 }
 
 // Function to put the content of the file in a string
@@ -134,6 +134,7 @@ void	ft_file_to_char(char *filename, char *output_string)
 		write(2, "Dict Error\n", 11);
 		exit(EXIT_FAILURE);
 	}
+	output_string[i + 1] = '/0)';
 	close(fd);
 }
 
