@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_number.c                                     :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/15 15:04:09 by adaferna          #+#    #+#             */
-/*   Updated: 2026/02/15 15:30:13 by adaferna         ###   ########.fr       */
+/*   Created: 2026/02/15 16:03:04 by adaferna          #+#    #+#             */
+/*   Updated: 2026/02/15 16:03:10 by adaferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_is_number(char *str)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	int	i;
 
-	if (!str || str[0] == '\0')
-		return (0);
 	i = 0;
-	while (str[i])
+	while (src[i] != '\0')
 	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
+		dest[i] = src[i];
 		i++;
 	}
-	return (1);
+	dest[i] = '\0';
+	return (dest);
 }
