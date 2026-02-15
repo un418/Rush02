@@ -6,7 +6,7 @@
 /*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 18:52:59 by adaferna          #+#    #+#             */
-/*   Updated: 2026/02/15 19:07:28 by adaferna         ###   ########.fr       */
+/*   Updated: 2026/02/15 19:27:10 by adaferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	ft_write_result(char *str, char *free_str1, char *free_str2);
 char	*ft_strcpy(char *dest, char *src);
 int		ft_arg(int argc, char **argv, char *filename);
 void	ft_free(char *str1, char *str2);
+int		ft_read_dict(char *dict, char **argv, int argc, char *filename);
 
 #endif

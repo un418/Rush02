@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_read_dict.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/15 16:21:11 by adaferna          #+#    #+#             */
-/*   Updated: 2026/02/15 19:30:56 by adaferna         ###   ########.fr       */
+/*   Created: 2026/02/15 19:16:03 by adaferna          #+#    #+#             */
+/*   Updated: 2026/02/15 19:30:01 by adaferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib/ourheader.h"
+#include "ourheader.h"
 
-int	main(int argc, char **argv)
+int	ft_read_dict(char *dict, char **argv, int argc, char *filename)
 {
-	char	*dict;
-	char	*filename;
-	int		i;
+	int a;
+	int i;
 
-	filename = malloc(sizeof(char *));
-	if (ft_arg(argc, argv, filename) != 0)
-		return (1);
-	dict = malloc(ft_filesize(filename)+ 1);
-	ft_file_to_char(filename, dict);
 	i = 0;
-	return(ft_read_dict(dict,argv,argc,filename));
+	if (argc == 2)
+		a = 1;
+	if(argc == 3)
+		a = 2;
+	while (dict[i])
+	{
+		if (dict[i] == argv[a][0])	
+		{
+			if (ft_is_valid_number(&dict[i], argv[a]))
+			{
+				ft_write_result(&dict[i], dict, filename);
+				return (0);
+			}
+		}
+		i++;
+	}
+	ft_free(dict, filename);
+	write(2, "Dict Error\n", 11);
+	return(1);
 }

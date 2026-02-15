@@ -6,7 +6,7 @@
 /*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 15:32:04 by adaferna          #+#    #+#             */
-/*   Updated: 2026/02/15 18:38:19 by adaferna         ###   ########.fr       */
+/*   Updated: 2026/02/15 19:13:45 by adaferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_arg(int argc, char **argv, char *filename)
 	if (argc == 3)
 	{
 		free(filename);
-		filename = malloc(sizeof(char) * ft_strlen(argv[1]));
+		filename = malloc(sizeof(char) * ft_strlen(argv[1] + 1));
 		ft_strcpy(filename, argv[1]);
 		return (0);
 	}
