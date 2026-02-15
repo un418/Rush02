@@ -6,7 +6,7 @@
 /*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 15:32:04 by adaferna          #+#    #+#             */
-/*   Updated: 2026/02/15 19:13:45 by adaferna         ###   ########.fr       */
+/*   Updated: 2026/02/15 19:38:29 by adaferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_arg(int argc, char **argv, char *filename)
 
 	default_filename = "numbers.dict";
 	if ((argc == 2 && !ft_is_number(argv[1]))
-		|| (argc == 3 && !ft_is_number(argv[2])) || argc > 3)
+		|| (argc == 3 && !ft_is_number(argv[2])) || argc > 3 || argc == 1)
 	{
 		write(2, "Error\n", 6);
 		return (1);
