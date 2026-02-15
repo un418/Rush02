@@ -7,6 +7,10 @@
 
 SHELL = /bin/sh
 
+NAME	= rush-02
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
+
 SRC =	main.c \
 		lib/ft_arg.c \
 		lib/ft_filesize.c \
@@ -20,14 +24,15 @@ SRC =	main.c \
 		lib/ft_free.c \
 		lib/ft_read_dict.c
 
-NAME = rush-02
 
 all: $(NAME)
 
 $(NAME):
-	cc -g -Wextra -Werror -Wall $(SRC) -o $(NAME)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:
+	rm -f $(NAME)
 
 fclean: clean
-	rm -f $(NAME)
+	
+re: fclean all
