@@ -35,9 +35,6 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME):
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
-
 clean:
 	rm -f $(OBJS)
 
