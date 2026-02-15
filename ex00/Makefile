@@ -13,7 +13,6 @@ SRC =	main.c \
 		lib/ft_file_to_char.c \
 		lib/ft_is_number.c \
 		lib/ft_is_valid_number.c \
-		lib/ft_putstr.c \
 		lib/ft_strcpy.c \
 		lib/ft_strlen.c \
 		lib/ft_strncmp.c \
