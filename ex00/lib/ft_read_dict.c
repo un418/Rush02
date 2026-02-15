@@ -6,7 +6,7 @@
 /*   By: adaferna <adaferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 19:16:03 by adaferna          #+#    #+#             */
-/*   Updated: 2026/02/15 19:35:01 by adaferna         ###   ########.fr       */
+/*   Updated: 2026/02/15 19:43:11 by adaferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,14 @@ int	ft_read_dict(char *dict, char **argv, int argc, char *filename)
 		{
 			if (ft_is_valid_number(&dict[i], argv[a]))
 			{
-				ft_write_result(&dict[i], dict, filename);
+				ft_write_result(&dict[i]);
+				ft_free(dict, filename);
 				return (0);
 			}
 		}
 		i++;
 	}
-	ft_free(dict, filename);
 	write(2, "Dict Error\n", 11);
+	ft_free(dict, filename);
 	return (1);
 }
