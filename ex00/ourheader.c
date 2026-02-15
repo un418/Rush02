@@ -58,29 +58,24 @@ int	ft_is_number(char *str)
 	return (1);
 }
 
-// @adaferna - Added my ft_strncmp but never be evaluated on this project
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int	i;
-	int				diff;
-
-	i = 0;
-	diff = 0;
-	if (n != 0)
+	unsigned int c;
+	c = 0;
+	while( c < n && ((*s1) || (*s2)))
 	{
-		while (s1[i] && i <= n)
+		if(*s1 == *s2)
 		{
-			diff = diff + s1[i];
-			i++;
+			s1++;
+			s2++;
+			c++;
 		}
-		i = 0;
-		while (s2[i] && i <= n)
+		else
 		{
-			diff = diff - s2[i];
-			i++;
+			return(*s1 - *s2);
 		}
 	}
-	return (diff);
+	return 0;
 }
 
 int	ft_is_valid_number(char *line, char *argument_string)
