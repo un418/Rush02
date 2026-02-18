@@ -1,0 +1,49 @@
+# ================= VARIABLES =================
+# Compiler to be used (mandated by 42)
+CC = cc
+
+# Compilation flags for strict adherence to the Norm
+CFLAGS = -Wall -Wextra -Werror
+
+# Name of the output executable
+NAME = rush-02
+
+# List of source files (.c)
+SRCS = main.c dict.c parse.c utils.c
+
+# Object files generation
+# Replaces the .c extension with .o for all files in $(SRCS)
+OBJS = $(SRCS:.c=.o)
+
+# ================= RULES =================
+
+# Default rule: triggered when running 'make' without arguments
+all: $(NAME)
+
+# Linking rule: creates the executable
+# It depends on all object files listed in $(OBJS)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+# Pattern rule: compiles each .c file into a .o file
+# -c: Tells the compiler to generate an object file (no linking yet)
+# $<: Automatic variable representing the prerequisite (the .c file)
+# $@: Automatic variable representing the target (the .o file)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean rule: removes object files to save space
+# rm -f: "force" delete, ignores non-existent files
+clean:
+	rm -f $(OBJS)
+
+# Full clean rule: removes objects AND the binary
+fclean: clean
+	rm -f $(NAME)
+
+# Re-build rule: performs a full clean then recompiles everything
+re: fclean all
+
+# Protection against file/rule name conflicts
+# Prevents 'make' from failing if a file named 'clean' or 'all' exists
+.PHONY: all clean fclean re
